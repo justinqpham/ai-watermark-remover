@@ -1,14 +1,32 @@
 # AI Watermark Remover
 
-An AI-powered tool to detect and remove hidden watermark characters from text.  This was made because all the others make you pay and they're dog shit... and because I was bored... and I want to impress Toma.
+A clean, Apple-style web application for detecting and removing hidden watermark characters from text.
 
 ## Features
+- 🔍 **Hidden Character Detection**: Automatically detects invisible watermark characters
+- 🧹 **One-Click Cleaning**: Remove all hidden characters with a single button click
+- 📋 **Automatic Clipboard Copy**: Cleaned text is automatically copied to your clipboard
+- 🎨 **Beautiful Design**: Clean, Apple-inspired interface
+- 🚀 **Fast & Responsive**: Built with React and Vite for optimal performance
 
-- **Hidden Character Detection**: Automatically detects invisible watermark characters in text
-- **Real-time Highlighting**: Shows hidden characters with visual indicators
-- **One-click Cleaning**: Removes all hidden characters with a single click
-- **Copy to Clipboard**: Automatically copies cleaned text to clipboard
-- **Modern UI**: Beautiful, Apple-inspired design with smooth animations
+## Live Demo
+- **Vercel**: https://ai-watermark-remover.vercel.app/
+- **GitHub Pages**: https://justinqpham.github.io/ai-watermark-remover/
+
+## How It Works
+1. Paste your text into the input area
+2. Hidden characters will be highlighted in red
+3. Click "Clean Text" to remove all hidden characters
+4. Cleaned text is automatically copied to your clipboard
+
+## Development
+```bash
+npm run dev    # Start development server
+npm run build  # Build for production
+npm run deploy # Deploy to GitHub Pages
+```
+
+Built with ❤️ for Toma
 
 ## Project info
 
