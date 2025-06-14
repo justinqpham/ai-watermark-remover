@@ -5,10 +5,6 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
-  // Use root path for Vercel, GitHub Pages path for other deployments
-  const isVercel = process.env.VERCEL === '1';
-  const base = mode === 'production' && !isVercel ? '/ai-watermark-remover/' : '/';
-  
   return {
     server: {
       host: "::",
@@ -19,7 +15,7 @@ export default defineConfig(({ mode }) => {
       mode === 'development' &&
       componentTagger(),
     ].filter(Boolean),
-    base,
+    base: '/',
     resolve: {
       alias: {
         "@": path.resolve(__dirname, "./src"),

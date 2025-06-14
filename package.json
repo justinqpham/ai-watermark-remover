@@ -6,10 +6,11 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "build:github": "vite build --base=/ai-watermark-remover/",
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
     "preview": "vite preview",
-    "deploy": "npm run build && npx gh-pages -d dist"
+    "deploy": "npm run build:github && npx gh-pages -d dist"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",
