@@ -22,7 +22,7 @@ const SampleButton = ({ onClick }: SampleButtonProps) => {
         "transition-all duration-200 hover:shadow-md",
         "flex items-center gap-2 sm:gap-3",
         "text-sm sm:text-base tracking-normal",
-        "mb-2 sm:mb-0 sm:mr-3 w-full sm:w-auto"
+        "w-full sm:w-auto sm:mr-3"
       )}
     >
       <FileText size={18} className="sm:w-5 sm:h-5" />

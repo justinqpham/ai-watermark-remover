@@ -66,8 +66,9 @@ Specialized scripts scan for these hidden characters and count occurrences. Once
 
   return (
     <div className="w-full max-w-7xl mx-auto bg-white/95 backdrop-blur-sm rounded-3xl p-4 sm:p-8 md:p-12 border border-border/50 shadow-xl">
-      <div className="flex flex-col-reverse sm:flex-row sm:justify-between sm:items-center mb-6 sm:mb-8 gap-4">
-        <div className="flex flex-col sm:flex-row gap-2 sm:gap-4">
+      <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-6 sm:mb-8 gap-4">
+        {/* Mobile: Stack everything vertically, Desktop: Alerts on left */}
+        <div className="flex flex-col gap-3 sm:gap-4 order-2 sm:order-1">
           {showCleanNotification && (
             <Alert className="bg-emerald-50 border-emerald-200 text-emerald-800 w-auto rounded-2xl text-sm">
               <CheckCircle className="h-4 w-4 sm:h-5 sm:w-5 text-emerald-600" />
@@ -85,7 +86,9 @@ Specialized scripts scan for these hidden characters and count occurrences. Once
             </Alert>
           )}
         </div>
-        <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-0">
+        
+        {/* Mobile: Stack buttons vertically, Desktop: Side by side */}
+        <div className="flex flex-col gap-3 sm:flex-row sm:gap-0 order-1 sm:order-2">
           <SampleButton onClick={handleSampleText} />
           <CleanButton onClick={handleClean} disabled={!inputText.trim()} />
         </div>
