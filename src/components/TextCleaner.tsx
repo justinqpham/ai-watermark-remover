@@ -55,20 +55,20 @@ const TextCleaner = () => {
   };
 
   return (
-    <div className="max-w-7xl mx-auto">
-      <div className="flex justify-between items-center mb-4">
-        <div className="flex gap-3">
+    <div className="max-w-7xl mx-auto backdrop-blur-sm bg-white/5 rounded-3xl p-8 border border-white/10 shadow-2xl">
+      <div className="flex justify-between items-center mb-8">
+        <div className="flex gap-4">
           {showCleanNotification && (
-            <Alert className="bg-green-50 border-green-200 text-green-800 w-auto">
-              <CheckCircle className="h-4 w-4 text-green-600" />
+            <Alert className="bg-emerald-500/20 border-emerald-400/50 text-emerald-100 w-auto rounded-2xl backdrop-blur-sm">
+              <CheckCircle className="h-5 w-5 text-emerald-400" />
               <AlertDescription className="font-medium">
                 ✨ No hidden characters detected - your text is clean!
               </AlertDescription>
             </Alert>
           )}
           {hiddenCharCount > 0 && (
-            <Alert className="bg-red-50 border-red-200 text-red-800 w-auto">
-              <AlertTriangle className="h-4 w-4 text-red-600" />
+            <Alert className="bg-red-500/20 border-red-400/50 text-red-100 w-auto rounded-2xl backdrop-blur-sm">
+              <AlertTriangle className="h-5 w-5 text-red-400" />
               <AlertDescription className="font-medium">
                 🚨 {hiddenCharCount} hidden character{hiddenCharCount !== 1 ? 's' : ''} detected
               </AlertDescription>
@@ -80,9 +80,9 @@ const TextCleaner = () => {
         </div>
       </div>
       
-      <div className="grid md:grid-cols-2 gap-6">
-        <div className="space-y-2">
-          <h2 className="text-lg font-semibold text-slate-700">Original Text</h2>
+      <div className="grid md:grid-cols-2 gap-8">
+        <div className="space-y-4">
+          <h2 className="text-xl font-semibold text-gray-200 tracking-wide">Original Text</h2>
           <TextArea
             value={inputText}
             onChange={setInputText}
@@ -91,8 +91,8 @@ const TextCleaner = () => {
           />
         </div>
         
-        <div className="space-y-2">
-          <h2 className="text-lg font-semibold text-slate-700">
+        <div className="space-y-4">
+          <h2 className="text-xl font-semibold text-gray-200 tracking-wide">
             Text with Highlighted Hidden Characters
           </h2>
           <TextArea

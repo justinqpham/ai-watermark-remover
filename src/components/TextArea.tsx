@@ -18,25 +18,25 @@ const TextArea = ({ value, onChange, placeholder, isInput, showHtml = false }: T
           onChange={(e) => onChange(e.target.value)}
           placeholder={placeholder}
           className={cn(
-            "w-full h-full p-4 border border-slate-300 rounded-lg",
-            "bg-white shadow-sm resize-none font-mono text-sm",
-            "focus:ring-2 focus:ring-blue-500 focus:border-blue-500",
-            "transition-all duration-200",
-            "placeholder:text-slate-400"
+            "w-full h-full p-6 border border-white/20 rounded-2xl",
+            "bg-white/10 backdrop-blur-sm shadow-lg resize-none font-mono text-sm text-gray-100",
+            "focus:ring-2 focus:ring-cyan-400/50 focus:border-cyan-400/50",
+            "transition-all duration-300",
+            "placeholder:text-gray-400"
           )}
         />
       ) : (
         <div
           className={cn(
-            "w-full h-full p-4 border border-slate-300 rounded-lg",
-            "bg-slate-50 shadow-sm font-mono text-sm overflow-auto",
-            "whitespace-pre-wrap break-words"
+            "w-full h-full p-6 border border-white/20 rounded-2xl",
+            "bg-white/5 backdrop-blur-sm shadow-lg font-mono text-sm overflow-auto",
+            "whitespace-pre-wrap break-words text-gray-100"
           )}
         >
           {showHtml ? (
-            <div dangerouslySetInnerHTML={{ __html: value || `<span class="text-slate-400">${placeholder}</span>` }} />
+            <div dangerouslySetInnerHTML={{ __html: value || `<span class="text-gray-400">${placeholder}</span>` }} />
           ) : (
-            <span className={value ? "text-slate-900" : "text-slate-400"}>
+            <span className={value ? "text-gray-100" : "text-gray-400"}>
               {value || placeholder}
             </span>
           )}
