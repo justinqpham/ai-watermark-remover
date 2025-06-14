@@ -1,6 +1,10 @@
 # AI Watermark Remover
 
-A clean, Apple-style web application for detecting and removing hidden watermark characters from text.
+A clean and simple web application for detecting and removing hidden watermark characters from text.  
+I have no use for this but I was very peeved that all the other ones are dog shit 
+and they have the audacity to charge money for it 🙄
+
+No log obviously because I literally cannot care any less
 
 ## Features
 - 🔍 **Hidden Character Detection**: Automatically detects invisible watermark characters
@@ -18,15 +22,6 @@ A clean, Apple-style web application for detecting and removing hidden watermark
 2. Hidden characters will be highlighted in red
 3. Click "Clean Text" to remove all hidden characters
 4. Cleaned text is automatically copied to your clipboard
-
-## Development
-```bash
-npm run dev    # Start development server
-npm run build  # Build for production
-npm run deploy # Deploy to GitHub Pages
-```
-
-Built with ❤️ for Toma
 
 ## Project info
 
