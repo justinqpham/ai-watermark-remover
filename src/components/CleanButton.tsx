@@ -1,4 +1,3 @@
-
 import { Button } from '@/components/ui/button';
 import { Eraser } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -14,13 +13,13 @@ const CleanButton = ({ onClick, disabled }: CleanButtonProps) => {
       onClick={onClick}
       disabled={disabled}
       className={cn(
-        "px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-600",
-        "hover:from-cyan-400 hover:to-purple-500",
-        "text-white font-semibold rounded-2xl shadow-2xl",
-        "transition-all duration-300 transform hover:scale-105 hover:shadow-cyan-500/25",
-        "disabled:from-gray-600 disabled:to-gray-700",
+        "px-8 py-4 bg-gradient-to-r from-primary to-blue-500",
+        "hover:from-primary/90 hover:to-blue-500/90",
+        "text-primary-foreground font-semibold rounded-2xl shadow-lg",
+        "transition-all duration-300 transform hover:scale-105 hover:shadow-primary/25",
+        "disabled:from-muted disabled:to-muted",
         "disabled:hover:scale-100 disabled:cursor-not-allowed disabled:shadow-none",
-        "flex items-center gap-3 backdrop-blur-sm border border-white/20",
+        "flex items-center gap-3 backdrop-blur-sm border border-primary/20",
         "text-lg tracking-wide"
       )}
     >

@@ -1,4 +1,3 @@
-
 import { cn } from '@/lib/utils';
 
 interface TextAreaProps {
@@ -18,25 +17,25 @@ const TextArea = ({ value, onChange, placeholder, isInput, showHtml = false }: T
           onChange={(e) => onChange(e.target.value)}
           placeholder={placeholder}
           className={cn(
-            "w-full h-full p-6 border border-white/20 rounded-2xl",
-            "bg-white/10 backdrop-blur-sm shadow-lg resize-none font-mono text-sm text-gray-100",
-            "focus:ring-2 focus:ring-cyan-400/50 focus:border-cyan-400/50",
+            "w-full h-full p-6 border border-input rounded-3xl",
+            "bg-background/50 backdrop-blur-sm shadow-lg resize-none font-mono text-sm text-foreground",
+            "focus:ring-2 focus:ring-ring focus:border-ring",
             "transition-all duration-300",
-            "placeholder:text-gray-400"
+            "placeholder:text-muted-foreground"
           )}
         />
       ) : (
         <div
           className={cn(
-            "w-full h-full p-6 border border-white/20 rounded-2xl",
-            "bg-white/5 backdrop-blur-sm shadow-lg font-mono text-sm overflow-auto",
-            "whitespace-pre-wrap break-words text-gray-100"
+            "w-full h-full p-6 border border-input rounded-3xl",
+            "bg-muted/30 backdrop-blur-sm shadow-lg font-mono text-sm overflow-auto",
+            "whitespace-pre-wrap break-words text-foreground"
           )}
         >
           {showHtml ? (
-            <div dangerouslySetInnerHTML={{ __html: value || `<span class="text-gray-400">${placeholder}</span>` }} />
+            <div dangerouslySetInnerHTML={{ __html: value || `<span class="text-muted-foreground">${placeholder}</span>` }} />
           ) : (
-            <span className={value ? "text-gray-100" : "text-gray-400"}>
+            <span className={value ? "text-foreground" : "text-muted-foreground"}>
               {value || placeholder}
             </span>
           )}
