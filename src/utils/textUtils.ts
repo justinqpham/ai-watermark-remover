@@ -67,6 +67,36 @@ export const hasHiddenCharacters = (text: string): boolean => {
   return false;
 };
 
+export const countHiddenCharacters = (text: string): number => {
+  if (!text) return 0;
+  
+  let count = 0;
+  
+  // Count CRLF sequences
+  const crlfMatches = text.match(/\r\n/g);
+  if (crlfMatches) count += crlfMatches.length;
+  
+  // Count individual hidden characters (excluding CRLF components)
+  for (const char of Object.keys(hiddenCharacterMap)) {
+    if (char !== '\r\n') {
+      const regex = new RegExp(char.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'g');
+      const matches = text.match(regex);
+      if (matches) count += matches.length;
+    }
+  }
+  
+  // Count multiple consecutive space sequences
+  const multiSpaceMatches = text.match(/ {2,}/g);
+  if (multiSpaceMatches) {
+    // Count each extra space in sequences
+    multiSpaceMatches.forEach(match => {
+      count += match.length - 1; // -1 because one space is normal
+    });
+  }
+  
+  return count;
+};
+
 export const cleanText = (text: string): string => {
   if (!text) return '';
   
