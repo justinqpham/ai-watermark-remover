@@ -2,7 +2,6 @@
 const hiddenCharacterMap: Record<string, string> = {
   '\t': '<span class="bg-yellow-200 px-1 rounded text-xs font-bold" title="Tab">⇥</span>',
   '\r': '<span class="bg-yellow-200 px-1 rounded text-xs font-bold" title="Carriage Return">↵</span>',
-  '\n': '<span class="bg-yellow-200 px-1 rounded text-xs font-bold" title="Line Feed">↵</span>\n',
   '\r\n': '<span class="bg-yellow-200 px-1 rounded text-xs font-bold" title="CRLF">↵</span>\n',
   '\u00A0': '<span class="bg-yellow-200 px-1 rounded text-xs font-bold" title="Non-breaking Space">⎵</span>',
   '\u2000': '<span class="bg-yellow-200 px-1 rounded text-xs font-bold" title="En Quad">⎵</span>',
@@ -102,18 +101,18 @@ export const cleanText = (text: string): string => {
   
   let cleaned = text;
   
-  // Remove all the hidden characters we detect
+  // Remove all the hidden characters we detect (but preserve regular newlines)
   Object.keys(hiddenCharacterMap).forEach(char => {
-    if (char !== '\n' && char !== '\r\n') { // Keep regular line breaks
+    if (char !== '\r\n') { // Handle CRLF separately below
       const regex = new RegExp(char.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'g');
       cleaned = cleaned.replace(regex, '');
     }
   });
   
-  // Convert CRLF to LF
+  // Convert CRLF to LF (preserve line breaks but normalize them)
   cleaned = cleaned.replace(/\r\n/g, '\n');
   
-  // Remove carriage returns without line feeds
+  // Remove standalone carriage returns (these are suspicious)
   cleaned = cleaned.replace(/\r/g, '');
   
   // Replace multiple spaces with single space
