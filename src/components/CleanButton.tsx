@@ -1,6 +1,6 @@
 
 import { Button } from '@/components/ui/button';
-import { Clean } from 'lucide-react';
+import { Eraser } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 interface CleanButtonProps {
@@ -23,7 +23,7 @@ const CleanButton = ({ onClick, disabled }: CleanButtonProps) => {
         "flex items-center gap-2"
       )}
     >
-      <Clean size={20} />
+      <Eraser size={20} />
       Clean
     </Button>
   );
