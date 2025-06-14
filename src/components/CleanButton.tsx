@@ -13,17 +13,17 @@ const CleanButton = ({ onClick, disabled }: CleanButtonProps) => {
       onClick={onClick}
       disabled={disabled}
       className={cn(
-        "px-8 py-4 bg-gradient-to-r from-primary to-blue-500",
-        "hover:from-primary/90 hover:to-blue-500/90",
-        "text-primary-foreground font-semibold rounded-2xl shadow-lg",
-        "transition-all duration-300 transform hover:scale-105 hover:shadow-primary/25",
-        "disabled:from-muted disabled:to-muted",
-        "disabled:hover:scale-100 disabled:cursor-not-allowed disabled:shadow-none",
-        "flex items-center gap-3 backdrop-blur-sm border border-primary/20",
-        "text-lg tracking-wide"
+        "px-8 py-4 bg-blue-500",
+        "hover:bg-blue-600",
+        "text-white font-medium rounded-xl shadow-sm",
+        "transition-all duration-200 hover:shadow-md",
+        "disabled:bg-gray-200 disabled:text-gray-400",
+        "disabled:cursor-not-allowed disabled:shadow-none",
+        "flex items-center gap-3",
+        "text-base tracking-normal"
       )}
     >
-      <Eraser size={24} />
+      <Eraser size={20} />
       Clean Text
     </Button>
   );

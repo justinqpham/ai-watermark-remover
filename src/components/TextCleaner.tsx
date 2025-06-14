@@ -54,7 +54,7 @@ const TextCleaner = () => {
   };
 
   return (
-    <div className="max-w-7xl mx-auto bg-card/80 backdrop-blur-sm rounded-3xl p-8 border border-border/50 shadow-xl">
+    <div className="max-w-8xl mx-auto bg-card/80 backdrop-blur-sm rounded-3xl p-12 border border-border/50 shadow-xl">
       <div className="flex justify-between items-center mb-8">
         <div className="flex gap-4">
           {showCleanNotification && (
