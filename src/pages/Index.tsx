@@ -6,11 +6,11 @@ const Index = () => {
       {/* Apple-like soft radial gradient background */}
       <div className="container mx-auto px-6 py-12 relative z-10">
         <div className="text-center mb-12">
-          <h1 className="text-6xl font-bold text-gray-900 mb-4 tracking-tight">
+          <h1 className="text-6xl font-bold text-gray-900 mb-4 tracking-wide">
             AI Watermark Remover
           </h1>
-          <p className="text-xl text-gray-500 font-light tracking-wide">For Toma</p>
-          <p className="text-gray-600 mt-4 text-lg">Reveal and remove hidden characters with AI precision</p>
+          <p className="text-xl text-gray-500 font-light tracking-wide">Made for Toma 😘</p>
+          <p className="text-gray-600 mt-4 tracking-normal text-lg">Reveal and remove hidden characters with AI precision</p>
         </div>
         <TextCleaner />
       </div>

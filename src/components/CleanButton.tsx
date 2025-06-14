@@ -17,7 +17,7 @@ const CleanButton = ({ onClick, disabled }: CleanButtonProps) => {
         "hover:bg-blue-600",
         "text-white font-medium rounded-xl shadow-sm",
         "transition-all duration-200 hover:shadow-md",
-        "disabled:bg-gray-200 disabled:text-gray-400",
+        "disabled:bg-gray-200 disabled:text-gray-500",
         "disabled:cursor-not-allowed disabled:shadow-none",
         "flex items-center gap-3",
         "text-base tracking-normal"
