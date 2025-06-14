@@ -10,15 +10,15 @@ interface TextAreaProps {
 
 const TextArea = ({ value, onChange, placeholder, isInput, showHtml = false }: TextAreaProps) => {
   return (
-    <div className="relative h-96">
+    <div className="relative h-64 sm:h-80 md:h-96">
       {isInput ? (
         <textarea
           value={value}
           onChange={(e) => onChange(e.target.value)}
           placeholder={placeholder}
           className={cn(
-            "w-full h-full p-6 border border-input rounded-3xl",
-            "bg-background/50 backdrop-blur-sm shadow-lg resize-none font-mono text-sm text-foreground",
+            "w-full h-full p-4 sm:p-6 border border-input rounded-2xl sm:rounded-3xl",
+            "bg-background/50 backdrop-blur-sm shadow-lg resize-none font-mono text-xs sm:text-sm text-foreground",
             "focus:ring-2 focus:ring-ring focus:border-ring",
             "transition-all duration-300",
             "placeholder:text-muted-foreground"
@@ -27,8 +27,8 @@ const TextArea = ({ value, onChange, placeholder, isInput, showHtml = false }: T
       ) : (
         <div
           className={cn(
-            "w-full h-full p-6 border border-input rounded-3xl",
-            "bg-muted/30 backdrop-blur-sm shadow-lg font-mono text-sm overflow-auto",
+            "w-full h-full p-4 sm:p-6 border border-input rounded-2xl sm:rounded-3xl",
+            "bg-muted/30 backdrop-blur-sm shadow-lg font-mono text-xs sm:text-sm overflow-auto",
             "whitespace-pre-wrap break-words text-foreground"
           )}
         >

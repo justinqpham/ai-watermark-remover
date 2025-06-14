@@ -65,35 +65,35 @@ Specialized scripts scan for these hidden characters and count occurrences. Once
   };
 
   return (
-    <div className="max-w-6xl mx-auto bg-white/95 backdrop-blur-sm rounded-3xl p-12 border border-border/50 shadow-xl">
-      <div className="flex justify-between items-center mb-8">
-        <div className="flex gap-4">
+    <div className="w-full max-w-7xl mx-auto bg-white/95 backdrop-blur-sm rounded-3xl p-4 sm:p-8 md:p-12 border border-border/50 shadow-xl">
+      <div className="flex flex-col-reverse sm:flex-row sm:justify-between sm:items-center mb-6 sm:mb-8 gap-4">
+        <div className="flex flex-col sm:flex-row gap-2 sm:gap-4">
           {showCleanNotification && (
-            <Alert className="bg-emerald-50 border-emerald-200 text-emerald-800 w-auto rounded-2xl">
-              <CheckCircle className="h-5 w-5 text-emerald-600" />
+            <Alert className="bg-emerald-50 border-emerald-200 text-emerald-800 w-auto rounded-2xl text-sm">
+              <CheckCircle className="h-4 w-4 sm:h-5 sm:w-5 text-emerald-600" />
               <AlertDescription className="font-medium">
                 ✨ No hidden characters detected - your text is clean!
               </AlertDescription>
             </Alert>
           )}
           {hiddenCharCount > 0 && (
-            <Alert className="bg-red-50 border-red-200 text-red-800 w-auto rounded-2xl">
-              <AlertTriangle className="h-5 w-5 text-red-600" />
+            <Alert className="bg-red-50 border-red-200 text-red-800 w-auto rounded-2xl text-sm">
+              <AlertTriangle className="h-4 w-4 sm:h-5 sm:w-5 text-red-600" />
               <AlertDescription className="font-medium">
                 🚨 {hiddenCharCount} hidden character{hiddenCharCount !== 1 ? 's' : ''} detected
               </AlertDescription>
             </Alert>
           )}
         </div>
-        <div className="flex items-center">
+        <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-0">
           <SampleButton onClick={handleSampleText} />
           <CleanButton onClick={handleClean} disabled={!inputText.trim()} />
         </div>
       </div>
       
-      <div className="grid md:grid-cols-2 gap-8">
-        <div className="space-y-4">
-          <h2 className="text-xl font-semibold text-foreground tracking-wide">Original Text</h2>
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
+        <div className="space-y-3 sm:space-y-4">
+          <h2 className="text-lg sm:text-xl font-semibold text-foreground tracking-wide">Original Text</h2>
           <TextArea
             value={inputText}
             onChange={setInputText}
@@ -102,8 +102,8 @@ Specialized scripts scan for these hidden characters and count occurrences. Once
           />
         </div>
         
-        <div className="space-y-4">
-          <h2 className="text-xl font-semibold text-foreground tracking-wide">
+        <div className="space-y-3 sm:space-y-4">
+          <h2 className="text-lg sm:text-xl font-semibold text-foreground tracking-wide">
             Text with Highlighted Hidden Characters
           </h2>
           <TextArea
