@@ -1,9 +1,42 @@
 // Map of hidden characters to their visual representations
 const hiddenCharacterMap: Record<string, string> = {
+  // Control and Legacy Characters
   '\t': '<span class="bg-yellow-200 px-1 rounded text-xs font-bold" title="Tab">⇥</span>',
   '\r': '<span class="bg-yellow-200 px-1 rounded text-xs font-bold" title="Carriage Return">↵</span>',
   '\r\n': '<span class="bg-yellow-200 px-1 rounded text-xs font-bold" title="CRLF">↵</span>\n',
+  '\u000B': '<span class="bg-yellow-200 px-1 rounded text-xs font-bold" title="Vertical Tab">⇥</span>',
+  '\u000C': '<span class="bg-yellow-200 px-1 rounded text-xs font-bold" title="Form Feed">⇞</span>',
+  '\u001C': '<span class="bg-yellow-200 px-1 rounded text-xs font-bold" title="File Separator">FS</span>',
+  '\u001D': '<span class="bg-yellow-200 px-1 rounded text-xs font-bold" title="Group Separator">GS</span>',
+  '\u001E': '<span class="bg-yellow-200 px-1 rounded text-xs font-bold" title="Record Separator">RS</span>',
+  '\u001F': '<span class="bg-yellow-200 px-1 rounded text-xs font-bold" title="Unit Separator">US</span>',
+  '\u007F': '<span class="bg-yellow-200 px-1 rounded text-xs font-bold" title="Delete">DEL</span>',
+  
+  // Zero-Width and Invisible Characters
+  '\u00AD': '<span class="bg-yellow-200 px-1 rounded text-xs font-bold" title="Soft Hyphen">∅</span>',
+  '\u180E': '<span class="bg-yellow-200 px-1 rounded text-xs font-bold" title="Mongolian Vowel Separator">∅</span>',
+  '\u200B': '<span class="bg-yellow-200 px-1 rounded text-xs font-bold" title="Zero Width Space">∅</span>',
+  '\u200C': '<span class="bg-yellow-200 px-1 rounded text-xs font-bold" title="Zero Width Non-Joiner">∅</span>',
+  '\u200D': '<span class="bg-yellow-200 px-1 rounded text-xs font-bold" title="Zero Width Joiner">∅</span>',
+  '\u2060': '<span class="bg-yellow-200 px-1 rounded text-xs font-bold" title="Zero Width Non-Breaking Space">∅</span>',
+  '\u2063': '<span class="bg-yellow-200 px-1 rounded text-xs font-bold" title="Invisible Separator">∅</span>',
+  '\u2064': '<span class="bg-yellow-200 px-1 rounded text-xs font-bold" title="Invisible Plus">∅</span>',
+  '\uFEFF': '<span class="bg-yellow-200 px-1 rounded text-xs font-bold" title="Byte Order Mark">BOM</span>',
+  
+  // Directional Controls (Critical for sophisticated watermarking)
+  '\u200E': '<span class="bg-yellow-200 px-1 rounded text-xs font-bold" title="Left-to-Right Mark">LTR</span>',
+  '\u200F': '<span class="bg-yellow-200 px-1 rounded text-xs font-bold" title="Right-to-Left Mark">RTL</span>',
+  '\u202A': '<span class="bg-yellow-200 px-1 rounded text-xs font-bold" title="Left-to-Right Embedding">LRE</span>',
+  '\u202B': '<span class="bg-yellow-200 px-1 rounded text-xs font-bold" title="Right-to-Left Embedding">RLE</span>',
+  '\u202C': '<span class="bg-yellow-200 px-1 rounded text-xs font-bold" title="Pop Directional Formatting">PDF</span>',
+  '\u202D': '<span class="bg-yellow-200 px-1 rounded text-xs font-bold" title="Left-to-Right Override">LRO</span>',
+  '\u202E': '<span class="bg-yellow-200 px-1 rounded text-xs font-bold" title="Right-to-Left Override">RLO</span>',
+  '\u2068': '<span class="bg-yellow-200 px-1 rounded text-xs font-bold" title="First Strong Isolate">FSI</span>',
+  '\u2069': '<span class="bg-yellow-200 px-1 rounded text-xs font-bold" title="Pop Directional Isolate">PDI</span>',
+  
+  // Space Variants and Formatting Spaces
   '\u00A0': '<span class="bg-yellow-200 px-1 rounded text-xs font-bold" title="Non-breaking Space">⎵</span>',
+  '\u1680': '<span class="bg-yellow-200 px-1 rounded text-xs font-bold" title="Ogham Space Mark">⎵</span>',
   '\u2000': '<span class="bg-yellow-200 px-1 rounded text-xs font-bold" title="En Quad">⎵</span>',
   '\u2001': '<span class="bg-yellow-200 px-1 rounded text-xs font-bold" title="Em Quad">⎵</span>',
   '\u2002': '<span class="bg-yellow-200 px-1 rounded text-xs font-bold" title="En Space">⎵</span>',
@@ -15,12 +48,13 @@ const hiddenCharacterMap: Record<string, string> = {
   '\u2008': '<span class="bg-yellow-200 px-1 rounded text-xs font-bold" title="Punctuation Space">⎵</span>',
   '\u2009': '<span class="bg-yellow-200 px-1 rounded text-xs font-bold" title="Thin Space">⎵</span>',
   '\u200A': '<span class="bg-yellow-200 px-1 rounded text-xs font-bold" title="Hair Space">⎵</span>',
-  '\u200B': '<span class="bg-yellow-200 px-1 rounded text-xs font-bold" title="Zero Width Space">∅</span>',
-  '\u200C': '<span class="bg-yellow-200 px-1 rounded text-xs font-bold" title="Zero Width Non-Joiner">∅</span>',
-  '\u200D': '<span class="bg-yellow-200 px-1 rounded text-xs font-bold" title="Zero Width Joiner">∅</span>',
+  '\u202F': '<span class="bg-yellow-200 px-1 rounded text-xs font-bold" title="Zero Width Narrow No-Break Space">⎵</span>',
+  '\u205F': '<span class="bg-yellow-200 px-1 rounded text-xs font-bold" title="Medium Mathematical Space">⎵</span>',
+  '\u3000': '<span class="bg-yellow-200 px-1 rounded text-xs font-bold" title="Ideographic Space">⎵</span>',
+  
+  // Line and Paragraph Controls
   '\u2028': '<span class="bg-yellow-200 px-1 rounded text-xs font-bold" title="Line Separator">↵</span>',
   '\u2029': '<span class="bg-yellow-200 px-1 rounded text-xs font-bold" title="Paragraph Separator">¶</span>',
-  '\uFEFF': '<span class="bg-yellow-200 px-1 rounded text-xs font-bold" title="Byte Order Mark">BOM</span>',
 };
 
 export const detectHiddenCharacters = (text: string): string => {
@@ -96,18 +130,39 @@ export const countHiddenCharacters = (text: string): number => {
   return count;
 };
 
+// Comprehensive regex pattern for all hidden characters (from industry reference)
+const HIDDEN_CHARS_REGEX = /[\u0009\u000B\u000C\u000D\u001C-\u001F\u007F\u00A0\u00AD\u1680\u180E\u2000-\u200F\u2028\u2029\u202A-\u202E\u2060\u2063\u2064\u2066-\u2069\u205F\u3000\uFEFF]/g;
+
+// Character categories for advanced analysis
+export const getCharacterCategory = (char: string): string => {
+  const code = char.charCodeAt(0);
+  
+  if ([0x0009, 0x000B, 0x000C, 0x000D, 0x001C, 0x001D, 0x001E, 0x001F, 0x007F].includes(code)) {
+    return 'Control Character';
+  }
+  if ([0x00AD, 0x180E, 0x200B, 0x200C, 0x200D, 0x2060, 0x2063, 0x2064, 0xFEFF].includes(code)) {
+    return 'Zero-Width/Invisible';
+  }
+  if ([0x200E, 0x200F, 0x202A, 0x202B, 0x202C, 0x202D, 0x202E, 0x2068, 0x2069].includes(code)) {
+    return 'Directional Control';
+  }
+  if ([0x00A0, 0x1680, 0x202F, 0x205F, 0x3000].includes(code) || (code >= 0x2000 && code <= 0x200A)) {
+    return 'Space Variant';
+  }
+  if ([0x2028, 0x2029].includes(code)) {
+    return 'Line Control';
+  }
+  
+  return 'Unknown Hidden';
+};
+
 export const cleanText = (text: string): string => {
   if (!text) return '';
   
   let cleaned = text;
   
-  // Remove all the hidden characters we detect (but preserve regular newlines)
-  Object.keys(hiddenCharacterMap).forEach(char => {
-    if (char !== '\r\n') { // Handle CRLF separately below
-      const regex = new RegExp(char.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'g');
-      cleaned = cleaned.replace(regex, '');
-    }
-  });
+  // Remove all hidden characters using comprehensive regex (but preserve regular newlines)
+  cleaned = cleaned.replace(HIDDEN_CHARS_REGEX, '');
   
   // Convert CRLF to LF (preserve line breaks but normalize them)
   cleaned = cleaned.replace(/\r\n/g, '\n');
@@ -118,8 +173,8 @@ export const cleanText = (text: string): string => {
   // Replace multiple spaces with single space
   cleaned = cleaned.replace(/ {2,}/g, ' ');
   
-  // Replace non-breaking spaces with regular spaces
-  cleaned = cleaned.replace(/\u00A0/g, ' ');
+  // Convert various space variants to regular spaces
+  cleaned = cleaned.replace(/[\u00A0\u1680\u2000-\u200A\u202F\u205F\u3000]/g, ' ');
   
   return cleaned;
 };
