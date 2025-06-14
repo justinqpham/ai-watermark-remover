@@ -1,4 +1,14 @@
-# Welcome to your Lovable project
+# AI Watermark Remover
+
+An AI-powered tool to detect and remove hidden watermark characters from text. This application helps users identify invisible characters that may be embedded in text as watermarks and provides a clean version of the text.
+
+## Features
+
+- **Hidden Character Detection**: Automatically detects invisible watermark characters in text
+- **Real-time Highlighting**: Shows hidden characters with visual indicators
+- **One-click Cleaning**: Removes all hidden characters with a single click
+- **Copy to Clipboard**: Automatically copies cleaned text to clipboard
+- **Modern UI**: Beautiful, Apple-inspired design with smooth animations
 
 ## Project info
 
@@ -27,7 +37,7 @@ Follow these steps:
 git clone <YOUR_GIT_URL>
 
 # Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+cd ai-watermark-remover
 
 # Step 3: Install the necessary dependencies.
 npm i
