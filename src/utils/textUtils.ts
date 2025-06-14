@@ -1,4 +1,3 @@
-
 // Map of hidden characters to their visual representations
 const hiddenCharacterMap: Record<string, string> = {
   '\t': '<span class="bg-yellow-200 px-1 rounded text-xs font-bold" title="Tab">⇥</span>',
@@ -47,6 +46,25 @@ export const detectHiddenCharacters = (text: string): string => {
   });
   
   return result;
+};
+
+export const hasHiddenCharacters = (text: string): boolean => {
+  if (!text) return false;
+  
+  // Check for CRLF
+  if (text.includes('\r\n')) return true;
+  
+  // Check for individual hidden characters
+  for (const char of Object.keys(hiddenCharacterMap)) {
+    if (char !== '\r\n' && text.includes(char)) {
+      return true;
+    }
+  }
+  
+  // Check for multiple consecutive spaces
+  if (/ {2,}/.test(text)) return true;
+  
+  return false;
 };
 
 export const cleanText = (text: string): string => {
