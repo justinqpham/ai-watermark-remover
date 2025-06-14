@@ -34,6 +34,9 @@ const TextCleaner = () => {
   const handleClean = async () => {
     const cleaned = cleanText(inputText);
     
+    // Update the processed text to show the cleaned version
+    setProcessedText(cleaned);
+    
     try {
       await navigator.clipboard.writeText(cleaned);
       toast({
