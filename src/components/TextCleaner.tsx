@@ -3,7 +3,7 @@ import { toast } from "@/hooks/use-toast";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { CheckCircle, AlertTriangle } from "lucide-react";
 import TextArea from './TextArea';
-import CleanButton from './CleanButton';
+import CleanButton, { SampleButton } from './CleanButton';
 import { detectHiddenCharacters, cleanText, hasHiddenCharacters, countHiddenCharacters } from '../utils/textUtils';
 
 const TextCleaner = () => {
@@ -53,6 +53,17 @@ const TextCleaner = () => {
     }
   };
 
+  const handleSampleText = () => {
+    const sampleText = `Although the text you see appears perfectly normal, modern AI models can embed invisible "watermarks" that only specialized programs can detect. These watermarks consist of zero-width or control characters—such as the zero-width space (​), zero-width non-joiner (‌), zero-width joiner (‍), zero-width no-break space (), soft hyphen (­), and word joiner ( )—which remain hidden to human readers.
+
+When you paste AI-generated text into your editor, every few words may secretly contain these markers. For example, an unseen zero-width space might follow "although"​ or a soft hyphen might slip in between "invisible"­ and "watermarks." These characters are not random typos; they serve as a fingerprint that flags the text's origin.
+
+Why do these watermarks occur? Developers may intentionally insert them to help detect machine-written content, or they can emerge as byproducts of internal tokenization and encoding processes within the AI system. Since AI models handle text at a byte or token level, certain control characters may be introduced during generation without affecting the visible output.
+
+Specialized scripts scan for these hidden characters and count occurrences. Once detected, the text can be flagged as AI-generated. By highlighting each marker and reporting "Found 7 watermarks," tools make it clear why a paragraph wasn't written by a human. Although invisible by design, these tiny markers ensure transparency and traceability in the age of AI writing.`;
+    setInputText(sampleText);
+  };
+
   return (
     <div className="max-w-6xl mx-auto bg-white/95 backdrop-blur-sm rounded-3xl p-12 border border-border/50 shadow-xl">
       <div className="flex justify-between items-center mb-8">
@@ -74,7 +85,8 @@ const TextCleaner = () => {
             </Alert>
           )}
         </div>
-        <div>
+        <div className="flex items-center">
+          <SampleButton onClick={handleSampleText} />
           <CleanButton onClick={handleClean} disabled={!inputText.trim()} />
         </div>
       </div>
