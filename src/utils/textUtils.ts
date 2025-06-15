@@ -131,6 +131,7 @@ export const countHiddenCharacters = (text: string): number => {
 };
 
 // Comprehensive regex pattern for all hidden characters (from industry reference)
+// eslint-disable-next-line no-control-regex
 const HIDDEN_CHARS_REGEX = /[\u0009\u000B\u000C\u000D\u001C-\u001F\u007F\u00A0\u00AD\u1680\u180E\u2000-\u200F\u2028\u2029\u202A-\u202E\u2060\u2063\u2064\u2066-\u2069\u205F\u3000\uFEFF]/g;
 
 // Character categories for advanced analysis
