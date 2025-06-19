@@ -9,7 +9,7 @@ const Index = () => {
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 mb-4 tracking-wide px-2">
             AI Watermark Remover
           </h1>
-          <p className="text-lg sm:text-xl text-gray-500 font-light tracking-wide px-2">Made for Toma 😘</p>
+          
           <p className="text-gray-600 mt-4 tracking-normal text-base sm:text-lg px-2">Reveal and remove hidden characters with AI precision</p>
         </div>
         <TextCleaner />
