@@ -1,10 +1,10 @@
 # AI Watermark Remover
 
 A clean and simple web application for detecting and removing hidden watermark characters from text.  
-I have no use for this but I was annoyed that all the other ones are dog shit 
+I have no use for this but I was annoyed that all the other ones are terrible
 and they have the audacity to charge money for it lol
 
-No log obviously because I literally couldn't care less
+No log obviously 
 
 ## Features
 - 🔍 **Hidden Character Detection**: Automatically detects invisible watermark characters
